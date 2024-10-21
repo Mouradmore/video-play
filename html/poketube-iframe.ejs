@@ -1,0 +1,191 @@
+
+<!DOCTYPE html>
+ <html>
+   <head>
+             <% if (video.Title) { %> 
+
+     <title> <%=video.Title%> - PokeTube</title>
+       <link href=/css/yt-ukraine.svg rel=icon>
+  <!-- STYLES START -->
+  
+<style>
+   a.class:hover {
+    text-decoration:underline;
+    font-weight:bold
+}
+  summary{
+    color:gray;
+}
+summary:hover{
+    color:white;
+}
+</style>
+   
+  
+     <script type="text/javascript">
+<!--//--><![CDATA[//><!--
+/**
+ * @licstart The following is the entire license notice for the JavaScript
+ * code in this page.
+ *
+ *  Copyright (C) 2021-2022 POKETUBE (https://codeberg.org/Ashley/poketube)
+ *
+ * The JavaScript code in this page is free software: you can redistribute
+ * it and/or modify it under the terms of the GNU General Public License
+ * (GNU GPL) as published by the Free Software Foundation, either version 3
+ * of the License, or (at your option) any later version.  The code is
+ * distributed WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU GPL
+ * for more details.
+ *
+ * As additional permission under GNU GPL version 3 section 7, you may
+ * distribute non-source (e.g., minimized or compacted) forms of that code
+ * without the copy of the GNU GPL normally required by section 4, provided
+ * you include this license notice and a URL through which recipients can
+ * access the Corresponding Source.
+ *
+ * @licend The above is the entire license notice for the JavaScript code
+ * in this page.
+ */
+
+//--><!]]>
+</script>
+     <style>
+       .player{
+      
+ width: 100%;
+height: 100%;
+
+       }
+     </style>
+
+   </head>
+               
+             <% if (type == "copy_code") { %> 
+               <style>
+                 * { 
+                     color:#000;
+                     font-family:sans-serif
+                 }
+                 textarea {
+                 width: 46em;
+                 height: 4em;
+                 resize: none;
+                 }
+               </style>
+               
+         <p>
+ 
+             copy the html code to embed this webpage bellow:    </p>
+               
+           <textarea disabled="true"><iframe title="Play video" src="https://poketube.fun/embed/<%=video.id%>" allowfullscreen="true" data-orig-height="360" data-orig-width="640" style="width: 640px; height: 360px;" width="640" height="360" frameborder="0"></iframe></textarea>
+      <% } %>
+
+        <% if (type !== "copy_code") { %> 
+  <link href=/css/app-cdn.min.css rel=stylesheet>
+  <link href=/css/app.main.css?v=44600 rel=stylesheet>
+  <link href="/css/watch.main.css?v=56" rel=stylesheet>
+  <link href="/css/watch-util.css" rel=stylesheet>
+  <link href="https://fonts.poketube.fun/css/fonts.css" rel=stylesheet>
+  <link href="/css/watch-navbar.css?v=56" rel=stylesheet>
+  <link href=https://p.poketube.fun/https://site-assets.fontawesome.com/releases/v6.1.1/css/all.css rel=stylesheet>
+<body style="width: 100%;height: 100%;">
+<div class="app" style="color:#fff;height: 100%;justify-content: center;width: 100%;">
+
+<nav style="height: auto;">
+  
+    <p style="style='font-family:poketube flex;margin-left: 10px;font-weight: 1000;font-stretch: ultra-expanded;'">
+       <%=video.Title%> 
+   <div style="display: flex;margin-right: 1em;background: #333;justify-items: center;border-radius: 1em;">
+    
+         <p style="display: flex;"> 
+				<a href="/channel?id=<%=video.Channel.id%>" class="avatar" style="font-size: x-small;display: flex;align-items: center;align-self: center;align-content: center;margin-left: 4px;">
+          By <%=k.Video.Channel.Name%>
+          </p>
+         </a>
+      </p>
+      <p style="white-space: nowrap;margin-right: 1em;">
+        <i class="fa-light fa-thumbs-up"></i> <%=engagement.likes.toLocaleString()%> <br>
+        <i class="fa-light fa-thumbs-down"></i> <%=engagement.dislikes.toLocaleString()%> 
+          </p>
+        </div>
+        <div style="display: flex;justify-content: center;align-items: center;flex-direction: row; column-gap: 3px;margin: 7;margin-left: auto;margin-right: 1em;" align="center">
+
+        <% if (!qua) { %> 
+
+                                 <i style="display: block;" class="fa-solid fa-high-definition"></i> <a href="/embed/<%=video.id%>/?quality=medium">
+          <i style="display: block;" class="fa-light fa-standard-definition"></i></a>
+                                                                      <% } %>               
+                               <% if (qua) { %> 
+                                 <a href="/embed/<%=video.id%>">  <i style="display: block;" class="fa-light fa-high-definition"></i> </a>  <i style="display: block;" class="fa-solid fa-standard-definition"></i>
+
+                                                                      <% } %>             
+                                                                        </div>
+                               
+    </nav>
+	   
+ 
+<div class="video-player-container" style="margin: auto;max-height: fit-content;overflow: hidden;" align="center">
+<video class="player" id="<%=sha384(video.id)%>" controls src="<%=url%>"  poster="https://p.poketube.fun/https://i.ytimg.com/vi/<%=video.id%>/hqdefault.jpg?v=607ddcd4">
+   
+    <% if (  video.Subtitles.Subtitle) { %>  
+     <%  if (Array.isArray( video.Subtitles.Subtitle)) { %> 
+   <% video.Subtitles.Subtitle.forEach(x => { %>
+     <track src="/api/subtitles?v=<%=video.id%>&h=<%= x.language %>" label="<%= x.language %>" kind="subtitles">      
+     
+        <img src="https://t.poketube.fun/t/rep.gif?v=<%=video.id%>&h=<%= x.language %>" id="subtitle_usage_rate" style="border:0;width: 0;visibility: hidden;"> 
+         <% }) %>   
+                                                                                                       <% } %>               
+                                                           <% } %>                
+                                                             
+ 					</video> 
+       
+                                         <div>
+                     
+                         
+                                                                                                          </div>
+                                                                        </div>
+     </div>
+
+ 
+ 
+ <% if (!optout) { %> 
+          <!-- MORE INFO :https://poketube.fun/privacy -->
+          <!-- MORE INFO :https://poketube.fun/privacy -->
+   
+          <!-- if you  want to change the url - please see config in server.js  -->
+   
+         <!-- START <%=t%> -->  
+  <!-- mobile only -->
+   <!-- dont use matomo.php, as its being blocked by ublock origin. -->
+        <img src="<%=t%>t/index.php?idsite=5&amp;rec=1" style="width: 0;visibility: hidden;border:0;"  alt="" >
+  <!--- mobile only -->
+   
+        <img src="<%=t%>t/rep.gif?ID=<%=btoa(Date.now())%>" style="width: 0;visibility: hidden;" id="SesionID">
+        <img src="<%=t%>t/rep.gif?video_id=<%=btoa(video.id)%>" style="width: 0;visibility: hidden;" id="videoID">
+        <img src="<%=t%>t/rep.gif?channel_ID=<%=btoa(video.Channel.id)%>" style="width: 0;visibility: hidden;" id="channel">
+        <img src="<%=t%>t/rep.gif?piwik=t" style="width: 0;visibility: hidden;" id="piwik_noip_no_personal-info_collect">
+        <!-- END <%=t%> -->  
+ <% } %>
+   
+                                                                         <% } %>             
+
+      <% } %>
+<script>
+if (window.top !== window) {
+ 
+} else {
+  
+   <% if (type == "copy_code") { %> 
+ 
+    <% } else { %>
+
+  // the current page is not being used inside an iframe
+   location.href = location.origin + "/watch?v=<%=video.id%>" 
+                                                                      <% } %>             
+
+}       
+</script>
+<script src="/css/custom-css.js"> </script>
+   </body>
+</html>

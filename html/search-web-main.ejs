@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+ 
+<!--[if IE 6]><html class="ie6" xmlns="http://www.w3.org/1999/xhtml"><![endif]-->
+<!--[if IE 7]><html class="lt-ie8 lt-ie9" xmlns="http://www.w3.org/1999/xhtml"><![endif]-->
+<!--[if IE 8]><html class="lt-ie9" xmlns="http://www.w3.org/1999/xhtml"><![endif]-->
+<!--[if gt IE 8]><!--><html xmlns="http://www.w3.org/1999/xhtml"><!--<![endif]-->
+<head>
+  <title>PokeSearch</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0, user-scalable=1" />
+  <link rel="manifest" href="/manifest.json">
+  <link href=/css/yt-ukraine.svg?v=6 rel=icon>
+    <link href=https://p.poketube.fun/https://site-assets.fontawesome.com/releases/v6.1.1/css/all.css rel=stylesheet>
+    <link rel="stylesheet" href="/css/search-web.main.css?v=4">
+  <script type="text/javascript">
+    /* Patch IE to support forEach on NodeLists, used in show/hide */
+    if (window.NodeList && !NodeList.prototype.forEach)
+        NodeList.prototype.forEach = Array.prototype.forEach;
+  </script> 
+  <style>
+    * {
+      font-family: "poketube flex" !important
+    }
+@keyframes gradient {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+.body--home, .site-wrapper--home {
+  background-image: radial-gradient(circle, #231638, #2b160e, #09250e, #0f132b);
+  animation: gradient 64s ease infinite;
+  background-size: 400% 400%;
+}
+    
+    a {
+ 	color: #fff;
+	font-weight: 686;
+	font-stretch: extra-expanded;
+     }
+     
+    .downnav {
+  position: fixed;
+  padding:10px;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  overflow: hidden;
+  z-index: 1;
+  color:#fff;
+  background-color: #0007;
+  border-radius: 5px;
+  width: calc(100% - 33px);
+  margin-left: 6px;
+    }
+  </style>
+  <script>
+<!--//--><![CDATA[//><!--
+/**
+ * @licstart The following is the entire license notice for the JavaScript
+ * code in this page.
+ *
+ *  Copyright (C) 2021-2023 PokeTube Project (https://codeberg.org/Ashley/poketube)
+ *
+ * The JavaScript code in this page is free software: you can redistribute
+ * it and/or modify it under the terms of the GNU General Public License
+ * (GNU GPL) as published by the Free Software Foundation, either version 3
+ * of the License, or (at your option) any later version.  The code is
+ * distributed WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU GPL
+ * for more details.
+ *
+ * As additional permission under GNU GPL version 3 section 7, you may
+ * distribute non-source (e.g., minimized or compacted) forms of that code
+ * without the copy of the GNU GPL normally required by section 4, provided
+ * you include this license notice and a URL through which recipients can
+ * access the Corresponding Source.
+ *
+ * @licend The above is the entire license notice for the JavaScript code
+ * in this page.
+ */
+
+//--><!]]>
+</script>
+ </head>
+
+<body class="body--home body--html">
+ <script>     /**
+       * Generates a random number between a specified range.
+       *
+       * @param {number} min - The minimum value (inclusive).
+       * @param {number} max - The maximum value (inclusive).
+       * @returns {number} A random number within the specified range.
+       */
+      function getRandomNumber(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      }
+
+      /**
+       * Capitalizes the first letter of a string.
+       *
+       * @param {string} string - The input string.
+       * @returns {string} The input string with the first letter capitalized.
+       */
+      function capitalizeFirstLetter(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+      }
+
+      /**
+       * Checks if a string contains a specific substring.
+       *
+       * @param {string} mainString - The main string to search in.
+       * @param {string} subString - The substring to look for.
+       * @returns {boolean} True if the substring is found, otherwise false.
+       */
+      function stringContains(mainString, subString) {
+        return mainString.includes(subString);
+      }
+
+      /**
+       * Calculates the square of a number.
+       *
+       * @param {number} number - The input number.
+       * @returns {number} The square of the input number.
+       */
+      function calculateSquare(number) {
+        return number * number;
+      }
+
+      /**
+       * Returns the current date as a string in the format 'YYYY-MM-DD'.
+       *
+       * @returns {string} The current date in 'YYYY-MM-DD' format.
+       */
+      function getCurrentDate() {
+        const today = new Date();
+        const year = today.getFullYear();
+        const month = String(today.getMonth() + 1).padStart(2, '0');
+        const day = String(today.getDate()).padStart(2, '0');
+        return `${year}-${month}-${day}`;
+      }
+
+
+      /**
+       * Redirects the current browser window to a new URL.
+       *
+       * @param {string} url - The URL to redirect to.
+       */
+      function redirectToURL(url) {
+        window.location.href = url;
+      }
+
+      /**
+       * Scrolls to the top of the current page.
+       */
+      function scrollToTop() {
+        window.scrollTo(0, 0);
+      }
+
+
+      /**
+       * Opens a new browser window with the specified URL.
+       *
+       * @param {string} url - The URL to open in the new window.
+       */
+      function openNewWindow(url) {
+        window.open(url, '_blank');
+      }
+
+      /**
+       * Reloads the current browser window.
+       */
+      function reloadWindow() {
+        window.location.reload();
+      }</script>
+<script>
+      /**
+       * Makes a GET request to the specified URL using the Fetch API.
+       *
+       * @param {string} url - The URL to send the GET request to.
+       * @returns {Promise} A Promise that resolves to the response data.
+       */
+      function fetchData(url) {
+        return fetch(url)
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error('Network response was not ok');
+            }
+            return response.json();
+          });
+      }
+
+      /**
+       * Makes a POST request to the specified URL using the Fetch API.
+       *
+       * @param {string} url - The URL to send the POST request to.
+       * @param {Object} data - The data to send in the request body.
+       * @returns {Promise} A Promise that resolves to the response data.
+       */
+      function postData(url, data) {
+        return fetch(url, {
+          method: 'POST',
+          body: JSON.stringify(data),
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        })
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error('Network response was not ok');
+            }
+            return response.json();
+          });
+      }
+
+  </script>
+  <div class="header-wrap--home"></div>
+  <div id="content_wrapper_homepage" class="content-wrap--home">
+  <div id="content_homepage" class="content--home">
+    <div class="logo-wrap--home">
+      <img src="/css/logo-search.svg?v=393939">
+    </div>
+    <div class="search-wrap--home">
+     <form name="x" id="search_form_homepage" class="search" action="/web" method="get">
+  <input placeholder="Search the web" name="query" autocomplete="off" id="search_form_input_homepage" class="search__input" type="text" autofocus />
+
+<div>
+      <button class="btn btn-success" type="submit" style="margin-top: 1em;margin-left: auto;text-align: center;display: flex;flex-direction: column;background: #fff;background-color: #303134;border: 1px solid #303134;border-radius: 4px;color: #e8eaed;font-family: arial,sans-serif;font-size: 14px;padding: 0 16px;line-height: 27px;height: 36px;min-width: 54px;margin-right: 9em;text-align: center;cursor: pointer;user-select: none;">
+    <p style="margin-top: auto;margin-bottom: auto;font-weight: 1000;margin-left: 6px;font-stretch: ultra-expanded;font-family:&quot;poketube flex&quot;;Poketube flex;">Search Poke</p>
+  </button>
+  <div style="margin-left: 5.5em;margin-right: auto;width: fit-content;color: #fff;font-weight: 1000;font-stretch: ultra-expanded;font-size: 33px;margin-bottom: -1em;margin-top: 6px;" id="clock"></div>
+ <span style="color:#fff;margin-left: auto;margin-right: 8em;text-align: center;display: flex;width: fit-content;margin-top: 2em;font-size: ;" id="weatherInfo"></span> 
+           </div>
+</form>
+
+<div class="downnav">
+<a style="color:#fff" href="/translate"> Translate </a> - <a style="color:#fff" href="/map"> PokeMaps </a> - <a style="color:#fff" href="/account-create">My Account</a> - <a style="color:#fff" href="/privacy">Privacy</a> -   <a style="color:#fff" href="https://codeberg.org/ashley/poketube">Git</a>
+<div style="float: right;">
+<a style="color:#fff" id="osInfo"></a> <a style="color:#fff;margin-right: 1em;" href="/license">License</a>
+  </div>
+          </div>
+
+
+
+  <script>
+  const userAgent = navigator.userAgent.toLowerCase();
+
+let osName = "";
+
+if (userAgent.includes("windows")) {
+  osName = "Windows";
+} else if (userAgent.includes("mac") || userAgent.includes("macintosh")) {
+  osName = "MacOS";
+} else if (userAgent.includes("linux")) {
+  osName = "GNU/Linux";
+} else if (userAgent.includes("android")) {
+  osName = "Android";
+} else if (userAgent.includes("ios") || userAgent.includes("iphone") || userAgent.includes("ipad")) {
+  osName = "iOS";
+}
+
+const osInfoElement = document.getElementById("osInfo");
+osInfoElement.textContent = `${osName} - `;
+    
+    function updateClock() {
+  var now = new Date();
+  var hours = now.getHours();
+  var minutes = now.getMinutes();
+  var seconds = now.getSeconds();
+
+  // Add leading zeros to minutes and seconds
+  minutes = (minutes < 10 ? "0" : "") + minutes;
+  seconds = (seconds < 10 ? "0" : "") + seconds;
+
+  // Display the time in the "clock" div
+  document.getElementById("clock").innerHTML = hours + ":" + minutes + ":" + seconds;
+
+  // Update the clock every second
+  setTimeout(updateClock, 1000);
+}
+
+// Call the function to initially display the clock
+updateClock();
+
+  </script>  <script>  
+const css = localStorage.getItem("poke-custom-css");
+
+var head = document.head 
+var style = document.createElement('style');
+
+head.appendChild(style);
+
+style.type = 'text/css';
+
+if (style.styleSheet){
+  // This is required for IE8 and below.
+  style.styleSheet.cssText = css;
+} else {
+  style.appendChild(document.createTextNode(css));
+}
+
+var script_tag = document.createElement('script');
+
+
+script_tag.type = 'text/javascript';
+
+script_tag.text = localStorage.getItem("poke-custom-script");
+
+document.head.appendChild(script_tag);
+      
+var config = {}
+config.plausible_enabled = false
+
+if (window.location.hostname === "poketube.fun" && config.plausible_enabled == true) {
+  const plausble_main = "https://telemetry.poketube.fun/js/p.js";
+  const script = document.createElement("script");
+  const isTrackingEnabled = localStorage.getItem("plausible-enabled") !== "false";
+  if (isTrackingEnabled) {
+    script.defer = true;
+    script.src = plausble_main;
+    script.dataset.domain = "poketube.fun";
+    document.head.appendChild(script);
+  }
+}
+      
+      // Function to fetch weather data and update the element
+      function fetchAndDisplayWeather() {
+        const url = 'https://wttr.in/?format=%c%t+%l';
+
+        fetch(url)
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error('Network response was not ok');
+            }
+            return response.text(); // Get the response as plain text
+          })
+          .then((weatherData) => {
+            const weatherElement = document.getElementById('weatherInfo');
+            weatherElement.textContent = weatherData; // Display the weather data in the element
+          })
+          .catch((error) => {
+            console.error('Error:', error);
+          });
+      }
+
+      // Call the fetchAndDisplayWeather function when the page loads
+      fetchAndDisplayWeather();
+</script><script src="/static/emojis.js"></script><script src="/static/data-mobile.js"></script><style> img.emoji {height: 1em;width: 1em;margin: 0 .05em 0 .1em;vertical-align: -0.1em;}</style>
+<script>twemoji.parse(document.body,{ base: 'https://p.poketube.fun/https://cdn.zptr.cc/twemoji/' })</script></div>
+ </div> <!-- id="content_homepage" -->
+  </div> <!-- id="content_wrapper_homepage" -->
+</body>
+</html>

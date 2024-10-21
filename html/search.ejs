@@ -1,0 +1,1159 @@
+ <!--
+    This Source Code Form is subject to the terms of the GNU General Public License:
+
+    Copyright (C) 2021-2024 poke (https://codeberg.org/Ashley/poketube)
+    
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program. If not, see https://www.gnu.org/licenses/.
+-->
+<!DOCTYPE html>
+<head>
+<head>
+<title>Searching <%=q%> | Poke</title>
+<link rel="manifest" href="/manifest.json">
+  <link href=/css/yt-ukraine.svg?v=6 rel=icon>
+ <link href=/css/app-cdn.min.css rel=stylesheet>
+<link href=/css/app.main.css?v=44600 rel=stylesheet>
+<link href=/css/search.main.css?v=547 rel=stylesheet>
+ <link href=/css/watch.main.css rel=stylesheet>
+<meta name="darkreader-lock"> <!-- tells dark reader that the site has a dark theme and to turn itself off -->
+  <meta content="Searching <%=q%> | Poke" property=og:title>
+       <% if (q == "do the harlem shake") { %>  
+             <meta content="DO THE HARLEM SHAKE" property=twitter:description>
+   <% } %> 
+   <% if (q != "do the harlem shake") { %>  
+         <meta content="Ur Searching <%=q%> on Poke!" property=twitter:description>
+   <% } %> 
+
+
+    <meta content="https://cdn.glitch.global/d68d17bb-f2c0-4bc3-993f-50902734f652/aa70111e-5bcd-4379-8b23-332a33012b78.image.png?v=1701898829884" property=og:image>
+ <meta content=summary_large_image name=twitter:card>
+     <meta content="#1a1a1a" name="theme-color">
+<style>
+   a.class:hover {
+    text-decoration:underline;
+    font-weight:bold
+}
+  summary{
+    color:blue;
+}
+summary:hover{
+    color:red;
+}
+  * {
+    color:#fff;
+   }
+      nav {
+        background:#111111
+    }
+  
+  
+ 
+</style>    
+
+  <link href=https://p.poketube.fun/https://site-assets.fontawesome.com/releases/v6.1.1/css/all.css rel=stylesheet>
+  <link href="https://p.poketube.fun/https://cdn.jsdelivr.net/npm/ionicons@4.5.0-0/dist/css/ionicons.min.css" rel=stylesheet>
+
+  <style>
+    
+    
+.search-options {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 855px;
+  margin: auto;
+  padding: 24px 0px 12px 0px; 
+}
+    
+.tags.rec:hover{
+  overflow-x:auto;
+}
+.tags.rec {
+  display: flex;
+  gap: 12px;
+  height: max-content;
+}
+.tags.rec > .tag {
+  border-radius: 8px;
+  background: var(--chip-background-hover);
+  padding: 8px 16px;
+}
+
+.tag {
+  padding: 5px;
+  border-radius: 4px;
+  word-break: break-all;
+  white-space: nowrap;
+  font-family: ubuntu, sans-serif;
+} 
+
+#filters-collapse summary {
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+}
+.filter-options div {
+  padding: 6px 12px;
+}
+.filter-name.underlined {
+  padding: 12px 0px 12px 23px;
+  font-weight: bold;
+}
+    
+.container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #333;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      text-align:center;
+    }
+    .container > * {
+            text-align:center !important;
+
+    }
+    .info > div {
+      font-family:Ubuntu, sans-serif;
+    }
+       #fetch-spinner {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+ z-index: 9999; 
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border-top: 2px solid #fff;
+  border-right: 2px solid #fff;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#fetch-text {
+  position: fixed;
+  top: 10px;
+  right: 40px;
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+   z-index: 9999; 
+
+}
+
+.hide {
+  display: none;
+}
+
+   .app{
+    /* background-image:url("/css/head.svg"); */
+    background-size: cover;
+  background-repeat: no-repeat;
+   }
+      .shake  {
+  animation: linear infinite alternate;
+  animation-name: DOTHESHAKE;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes DOTHESHAKE {
+    0% {
+      left: 0;
+      transform: translateX(0);
+    }
+    100% {
+      left: 900%;
+      transform: translateX(-90%);
+    }
+}
+         
+   /* nice classname am i rigth */
+   .discover-some-bitches{
+     text-align: center;
+     width: 673px;
+     margin: auto;
+   }
+    
+    .shelf {
+          max-width: 51em;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+  padding: 16px;
+background: #111111;
+border: #333333 solid;
+border-radius: 19px;
+margin-top: 1em;
+    }
+    
+        @font-face {
+        font-family: 'Ginto Nord';
+        font-weight: 800;
+        src:url('https://p.poketube.fun/https://cdn.statically.io/gh/brecert/discord-quote-generator/main/Ginto-Nord-800.woff') format("woff");
+      }
+    
+.video-list > .video {
+  background: #111;
+  padding: 10px;
+  border-radius: 10px;
+  border: #333 solid;
+}
+  </style>
+                 <style>section p {
+ font-family:Whitney, Helvetica Neue, Helvetica, Arial, sans-serif;
+ font-weight:400;
+ color:#fff;
+ font-size:16px;
+ line-height:24px;
+ margin-top:12px
+}
+                   
+                   .wiki > p {
+  margin-top: -2em;
+}
+                   * {
+text-rendering: auto;
+                   }
+    
+.sticky-top {
+	 position: sticky;
+	 top: 0px;
+	 z-index: 999;
+}
+ .responsive {
+	 width: 100%;
+	 overflow-x: auto;
+}
+ .tabs {
+	 display: table;
+   font-family:inter;
+	 border-collapse: separate;
+	 table-layout: auto;
+}
+.video:hover{
+border:solid;
+}                  
+ .tabs {
+	 display: table;
+   font-family:inter;
+	 border-collapse: separate;
+	 table-layout: auto;
+}
+ .tabs.tabs-center {
+	 margin: auto;
+}
+ .tabs.tabs-justify {
+	 width: 100%;
+	 table-layout: fixed;
+}
+ .tabs a.tab {
+	 position: relative;
+	 display: table-cell;
+	 transition: all ease 0.3s;
+	 padding: 1em 1.6em;
+	 transform: translate3d(0, 0, 0);
+	 color: #fff;
+	 white-space: nowrap;
+	 cursor: pointer;
+}
+ .tabs a.tab:hover {
+	 color: #3cb4fa;
+}
+ .tabs a.tab:after {
+	 transition: all 0.3s cubic-bezier(1, 0, 0, 1);
+	 will-change: transform, box-shadow, opacity;
+	 position: absolute;
+	 content: '';
+	 height: 3px;
+	 bottom: 0px;
+	 left: 0px;
+	 right: 0px;
+	 border-radius: 3px 3px 0px 0px;
+	 background: #9fdafd;
+	 box-shadow: 0px 4px 10px 3px rgba(60, 180, 250, .15);
+	 opacity: 0;
+	 transform: scale(0, 1);
+}
+ .tabs a.tab.active {
+	 color: #fff;
+}
+ .tabs a.tab.active:after {
+	 opacity: 1;
+	 transform: scale(1, 1);
+}                 
+       
+.something-background-a {
+    background-image: url('<%- media_proxy_url %>/proxy?url=https://static.wikia.nocookie.net/omori/images/f/fc/Something_Bed_(2018_Demo).gif') !important;
+}
+.something-background-b {
+    background-image: url('<%- media_proxy_url %>/proxy?url=https://static.wikia.nocookie.net/omori/images/1/14/Hangman_%28Laptop%29.png') !important;
+}
+.something-background-c {
+    background-image: url('<%- media_proxy_url %>/proxy?url=https://static.wikia.nocookie.net/omori/images/6/67/Nanci_Before.png') !important;
+}
+
+.loading .spinner {
+  display: inline-block;
+  border: 5px solid rgba(255, 255, 255, 0.2);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 1s ease-in-out infinite;
+  width: 50px;
+  height: 50px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+                   .a {
+                     display:none;
+                   }
+                     </style>
+ </head>
+     
+                 <% if(IsOldWindows) { %>
+              <style>
+                .title.max-lines-2 {
+                  font-family:"Inter " !important;
+                }
+              </style>
+              
+                                                      		 	               <% } %>   
+
+
+  <body>
+  
+ 
+        <div class="app">
+   
+    <nav>
+             <div class=left>
+
+  <% if (q == "do the harlem shake") { %>  
+              <a class="shake" href="/143" style=font-family:Inter,sans-serif;color:#fff>  <img style="transform: scale(1.3);width:8.5em;display: block;margin-left: auto;margin-right: auto;" src="/css/logo.svg?v=5"></a>
+               <audio class="player" autoplay loop controls src="https://eu-proxy.poketube.fun/latest_version?id=8vJiSSAMNWw&itag=18&local=true?e=ca0ac04022e782540e1f2fe4d6c2994949f33184ccc07568b4b1d7c93dfebd28119cb7b9e8b5db12039ba553ed861736ca0ac04022e782540e1f2fe4d6c2994949f33184ccc07568b4b1d7c93dfebd28119cb7b9e8b5db12039ba553ed861736Piwikd74c7f459daf669799074a22bcf7d79bb66e03dbd9899a2089e0bee8ed383f0c3b928c4477a42208cbd69a77549e3451
+" style="display:none;"> 
+        <script>
+             // @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&dn=gpl-3.0.txt GPL-3.0-or-later
+                   setTimeout(function () {
+                      const video = document.getElementsByClassName("video")
+                      for(var counter = 0; counter < video.length; counter++){
+video[counter].classList.add("shake");
+}
+                   }, 13700)
+               // @license-end
+                                     </script>
+   <% } %> 
+
+  <% if (q == "do a barrel roll") { %>  
+          <style>
+    @keyframes barrelRoll {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    body {
+      animation: barrelRoll 2s alternate; 
+    }
+  </style>
+   
+   <% } %> 
+     
+     <% if (q != "do the harlem shake") { %>   <% if (q != "want you gone") { %>  <% if (q != "portal 2 ending") { %>   <% if (q != "credits") { %>  <% if (q != "glados") { %>  <% if (q != "something") { %>  
+
+              <a class="class" href="/143" style=font-family:Inter,sans-serif;color:#fff>  <img style="transform: scale(1.3);width:8.5em;display: block;margin-left: auto;margin-right: auto;" src="/css/logo.svg?v=5"></a>
+       
+       
+       
+     
+   <% } %> 
+        <% } %><% } %>     
+
+
+   <% } %> 
+   <% } %> 
+
+        <% if (q == "want you gone" || q == "portal 2 ending" ||  q == "credits" || q == "glados ") { %>  
+            
+              <a class="class" href="/credits" style=font-family:Inter,sans-serif;color:#fff>  <img style="transform: scale(1.3);width:8.5em;display: block;margin-left: auto;margin-right: auto;" src="/css/logo-orng.svg?v=5"></a>
+          
+   <% } %> 
+     
+     
+          <% if (q == "something") { %>  
+              <a class="class" href="/143?something=143" style=font-family:Inter,sans-serif;color:#fff>  <img style="transform: scale(1.3);width:8.5em;display: block;margin-left: auto;margin-right: auto;" src="/css/logo.svg?v=5"></a>
+
+                    <% } %> 
+
+        <% } %> 
+
+     
+     
+            </div>          
+
+  
+        <div class="middle">
+<div class="search">
+  
+        <form action=/search><input class=search-bar autocomplete="on"  value="<%=q%>" id=fname name=query style="color:#fff;font-family:Inter,sans-serif;border-radius: 8px;">
+          <button class="btn btn-success" type=submit><i class="fa-light fa-search"></i></button>
+             
+         </form>
+
+      </div>          </div>
+
+
+            <div class=right>
+              
+<button title="Play/Pause Ambient music" class="a" id="audioButton" onclick="toggleAudio()">
+  <i id="audioIcon" class="fas fa-pause"></i>
+</button>
+
+              <a href="/domains"><i  style="display: block;margin-left: auto;margin-right: auto;" class="fa-light fa-server"></i>  </a>
+              <a href="/privacy"><i class="fa-light fa-shield"></i></a>
+              <a href="/video/upload?from="><i class="fa-light fa-video"></i></a> 
+              <a href="https://codeberg.org/Ashley/poketube/issues"><i class="fa-light fa-bug"></i></a>
+            </div>
+     
+      </nav>
+  
+  
+   </div>
+      
+
+    
+       </div>
+  <div class="channel-page"   style="background-color: var(--channel-contents-background);">   
+    <div class="search-options">
+      
+    <div id="filters">
+	<details id="filters-collapse">		<summary>Filters</summary>
+    <div id="filters-box"><form action="/search" method="get">
+			<input type="hidden" name="query" value="<%- q %>">
+			<input type="hidden" name="continuation" value="<%- continuation %>">
+			<div id="filters-flex" style="display: flex;gap: 18px;background: #111;border-radius: 1em;padding: 6px;width: fit-content;margin-left: auto;margin-right: auto;">				<div class="filter-column"><fieldset>
+					<legend><div class="filter-name underlined">Upload date</div></legend>
+					<div class="filter-options">
+<% const selectedDate = date || "none"; %>
+
+<% ['none', 'hour', 'today', 'week', 'month', 'year'].forEach(option => { %>
+  <div>
+    <input type="radio" name="date" id="filter-date-<%= option %>" value="<%= option %>" <%= selectedDate === option ? 'checked' : '' %>>
+    <label for="filter-date-<%= option %>"><%= option === 'none' ? 'Any date' : option === 'hour' ? 'Last Hour' : option === 'today' ? 'Today' : option === 'week' ? 'This week' : option === 'month' ? 'This month' : 'This year' %></label>
+  </div>
+<% }) %>					</div>				</fieldset></div>
+ 				<div class="filter-column"><fieldset>
+					<legend><div class="filter-name underlined">Duration</div></legend>
+					<div class="filter-options">
+ <% const selectedDuration = duration || "none"; %>
+
+<% ['none', 'short', 'long', 'medium'].forEach(option => { %>
+  <div>
+    <input type="radio" name="duration" id="filter-duration-<%= option %>" value="<%= option %>" <%= selectedDuration === option ? 'checked' : '' %>>
+    <label for="filter-duration-<%= option %>">
+      <%= option === 'none' ? 'Any duration' : option === 'short' ? 'Short (< 4 minutes)' : option === 'long' ? 'Long (> 20 minutes)' : 'Medium (4 - 20 minutes)' %>
+    </label>
+  </div>
+<% }) %>
+
+          </div>				</fieldset></div>
+				 
+				<div class="filter-column"><fieldset>
+					<legend><div class="filter-name underlined">Sort By</div></legend>
+					<div class="filter-options">
+ <% const selectedSort = sort || "relevance"; %>
+
+<% ['relevance', 'rating', 'date', 'views'].forEach(option => { %>
+  <div>
+    <input type="radio" name="sort" id="filter-sort-<%= option %>" value="<%= option %>" <%= selectedSort === option ? 'checked' : '' %>>
+    <label for="filter-sort-<%= option %>">
+      <%= option === 'relevance' ? 'Relevance' : option === 'rating' ? 'Rating' : option === 'date' ? 'Upload Date' : 'View count' %>
+    </label>
+  </div>
+<% }) %>
+
+          </div>				</fieldset></div>
+  <br> 			<div id="filters-apply"> <button type="submit" style="color:#fff;background:#333;padding:3px;border-radius:11px;margin-top: 6em;">Apply!</button></div>
+
+			</div>
+            </form></div>   </details></div>    
+    <div class="tags rec">
+                  
+                                <a style=" background: #111;" class="tag">
+Videos
+                   </a>
+                  
+                      <a href="/web?query=<%=q%>" style="color:#fff;text-decoration:none;display:none;
+" class="tag c"> 
+Web              </a>
+                  
+                     </div>   
+          </div>
+ <% 
+function isMathExpression(query) {
+    return /^[0-9\s\+\-\*\/\.\x]+$/.test(query);
+}
+
+function evaluateMathExpression(expression) {
+    // twenyone
+    if (expression.replace(/\s+/g, '') === '9+10') {
+        return '21';
+    }
+
+    try {
+        return eval(expression);
+    } catch (error) {
+        return 'Invalid Expression';
+    }
+}
+
+function getCurrentDate() {
+    const now = new Date();
+    return now.toLocaleDateString();
+}
+
+function getCurrentYear() {
+    return new Date().getFullYear();
+}
+
+function getTimeInTimezone(location) {
+    const timezones = {
+        "california": "America/Los_Angeles",
+        "new york": "America/New_York",
+        "chicago": "America/Chicago",
+        "denver": "America/Denver",
+        "phoenix": "America/Phoenix",
+        "anchorage": "America/Anchorage",
+        "honolulu": "Pacific/Honolulu",
+        "london": "Europe/London",
+        "paris": "Europe/Paris",
+        "berlin": "Europe/Berlin",
+        "madrid": "Europe/Madrid",
+        "rome": "Europe/Rome",
+        "moscow": "Europe/Moscow",
+        "athens": "Europe/Athens",
+        "sydney": "Australia/Sydney",
+        "melbourne": "Australia/Melbourne",
+        "brisbane": "Australia/Brisbane",
+        "perth": "Australia/Perth",
+        "tokyo": "Asia/Tokyo",
+        "osaka": "Asia/Osaka",
+        "seoul": "Asia/Seoul",
+        "beijing": "Asia/Shanghai",
+        "shanghai": "Asia/Shanghai",
+        "hong kong": "Asia/Hong_Kong",
+        "taipei": "Asia/Taipei",
+        "bangkok": "Asia/Bangkok",
+        "jakarta": "Asia/Jakarta",
+        "delhi": "Asia/Kolkata",
+        "mumbai": "Asia/Kolkata",
+        "kolkata": "Asia/Kolkata",
+        "karachi": "Asia/Karachi",
+        "lahore": "Asia/Karachi",
+        "dubai": "Asia/Dubai",
+        "abu dhabi": "Asia/Dubai",
+        "riyadh": "Asia/Riyadh",
+        "johannesburg": "Africa/Johannesburg",
+        "cairo": "Africa/Cairo",
+        "nairobi": "Africa/Nairobi",
+        "lagos": "Africa/Lagos",
+        "algiers": "Africa/Algiers",
+        "casablanca": "Africa/Casablanca",
+        "lisbon": "Europe/Lisbon",
+        "dublin": "Europe/Dublin",
+        "zurich": "Europe/Zurich",
+        "vienna": "Europe/Vienna",
+        "stockholm": "Europe/Stockholm",
+        "oslo": "Europe/Oslo",
+        "helsinki": "Europe/Helsinki"
+    };
+
+    const timezone = timezones[location.toLowerCase()];
+    if (!timezone) {
+        return null;
+    }
+
+    const now = new Date();
+    const options = { timeZone: timezone, timeStyle: 'medium', hour12: false };
+    return now.toLocaleTimeString('en-US', options);
+}
+
+const query = q.toLowerCase().trim();
+let answer = '';
+
+if (isMathExpression(query)) {
+    answer = evaluateMathExpression(query);
+} else if (query.includes('date') || query.includes('what date is it')) {
+    answer = getCurrentDate();
+} else if (query.includes('year') || query.includes('what year is it')) {
+    answer = getCurrentYear();
+} else if (query.includes('what time is it in')) {
+    const location = query.split('what time is it in')[1].trim();
+    answer = getTimeInTimezone(location);
+} else if (query.includes('what time is it')) {
+    answer = new Date().toLocaleTimeString();
+} else if (query.includes('day') || query.includes('what day is it')) {
+    const now = new Date();
+    const options = { weekday: 'long' };
+    answer = now.toLocaleDateString(undefined, options);
+} else if (query.includes('u are cute') || query.includes('you are cute')) {
+    answer = "jifshfgdhjf >~< no u"
+} else if (query.includes('ur cute') || query.includes('your cute')) {
+    answer = "efkohgefgef >///< no u"
+} else if (query.includes('am i cute') || query.includes('am i a cutie?')) {
+    answer = "yesh :3 u are "
+} else if (query.includes('am i a good girl') || query.includes('am i a good boy?')) {
+    answer = query.includes('girl') ? "yesh :3 u are a good girl" : "yesh :3 u are a good boy";
+} else if (query.includes('ur hot') || query.includes('you are hot')) {
+    answer = "jrifyehgyerfgu9wdswgfsafgydwgbfwdfge >~< "
+} 
+
+const upsellMessages = [
+    "[new] Try searching 'What's 4+4?'",
+    "[new] Ask 'What's the date today?'",
+    "[new] Try 'What time is it in California?'",
+    "[new] Ask 'What's the current year?'",
+    "[new] Try searching 'What's 7*8?'"
+];
+
+const showUpsell = !answer && Math.random() < 0.1;
+const randomUpsellMessage = showUpsell ? upsellMessages[Math.floor(Math.random() * upsellMessages.length)] : '';
+
+
+function extractQueryFromUpsellMessage(message) {
+    return message.replace("[new] Try searching '", "")
+                  .replace("[new] Try '", "")
+                  .replace("[new] Ask '", "")
+                  .replace("[new] Try ", "")
+                  .replace("'", "")
+                  .replace("?", "")
+                  .trim();
+}
+%>
+%>
+<% if (answer) { %>
+<div class="container">
+    <h2 style="font-family: 'PokeTube Flex';font-size: large;text-align: left !important;font-stretch: ultra-expanded; font-weight: 1000; margin-bottom: -0.1em;">
+        Answer to ur question
+    </h2>
+    <h2 style="font-family: 'PokeTube Flex';font-size: large;text-align:  right !important;font-stretch: ultra-expanded; font-weight: 1000; margin-bottom: -0.1em;margin-top: -1em;"><i title="PokeInstant Anwser! (not ai/LLM)" class="fa-light fa-sparkles"></i></h2>
+    <span style="font-size: 7em; margin-bottom: 3em; text-align: left !important; margin-right: 7em;white-space: -moz-pre-wrap !important;white-space: -pre-wrap;white-space: -o-pre-wrap;white-space: pre-wrap;word-wrap: break-word;white-space: -webkit-pre-wrap;word-break: break-all;white-space: normal;"><%= answer %></span>
+</div>
+<% } else if (showUpsell) { %>
+
+<% } %>
+
+<!-- self harm -->
+<% 
+const searchStrings = [
+    "suicide", "self harm", "self-harm", "support", "murder", "how to murder", "kill myself", 
+    "end my life", "depressed", "depression", "lonely", 
+    "hurt myself", "selfharm", "selfharm", "dying", "want to die", 
+    "kill", "die", "family problems", "family issues", "abuse", 
+    "domestic violence", "abusive parents", "family conflict", 
+    "estranged", "disowned", "run away", "runaway", ".full stop punctuation."
+];
+if (searchStrings.some(str => q.toLowerCase().includes(str))) { 
+%>
+
+<div class="container">          
+<span style="font-size: 7em; color: pink;margin-bottom: 3em;">❤️</span><br>
+    <h2 style="font-family: 'PokeTube Flex';font-size: large;text-align: left;font-stretch: ultra-expanded;
+font-weight: 1000;">You are not alone</h2>
+    <p>
+        If you're having a tough time or know someone who is, reaching out and talking to someone can really help.
+    </p>
+    <p>
+        In the US? Call <strong>988</strong> for support. Not in the US? <a href="https://www.psychologytoday.com/us/basics/suicide/suicide-prevention-hotlines-resources-worldwide">Check out this link</a> for worldwide help.
+    </p>
+    <p>
+        LGBTQ+ and need someone to talk to? Try the <a href="https://www.thetrevorproject.org/">Trevor Project</a> at <strong>1-866-488-7386</strong> or text <strong>START</strong> to <strong>678-678</strong>. For more options, <a href="https://www.imalive.org/">IMAlive</a> is also available.
+    </p>
+    <p>
+        Remember, ur not alone. u matter, and there's always someone who cares. and you are really important btw! <span style="font-family: 'PokeTube Flex';">❤️</span>
+    </p>
+        <p>wrong filter? <a href="https://codeberg.org/ashley/poke/issues/new?template=issue_template%2fsearch-filter.yml">Report :3</p>
+
+</div>
+<% } %>
+<% 
+const fakeNewsSources = {
+    "InfoWars": { 
+        category: "conspiracy", 
+        reason: "InfoWars has been widely criticized for promoting conspiracy theories and false information, such as falsely claiming that the Sandy Hook Elementary School shooting was a hoax.", 
+        search: "Is it true that InfoWars promotes conspiracy theories and false information?" 
+    },
+    "Breitbart": { 
+        category: "conservative", 
+        reason: "Breitbart is known for its extreme political bias and spreading misleading information, including downplaying the severity of COVID-19.", 
+        search: "Is it true that Breitbart spreads misleading information about COVID-19?" 
+    },
+    "Daily Mail": { 
+        category: "tabloid", 
+        reason: "The Daily Mail is frequently criticized for sensationalism and misinformation, such as publishing misleading health and science stories.", 
+        search: "Is it true that the Daily Mail publishes misleading health and science stories?" 
+    },
+    "Natural News": { 
+        category: "pseudoscience", 
+        reason: "Natural News promotes pseudoscience and conspiracy theories, including false vaccine claims and unverified health information.", 
+        search: "Is it true that Natural News promotes pseudoscience and false vaccine claims?" 
+    },
+    "RT news": { 
+        category: "state-sponsored", 
+        reason: "RT is a state-funded media outlet known for promoting Russian government perspectives and biased reporting on international issues.", 
+        search: "Is it true that RT promotes Russian government perspectives and biased reporting?" 
+    },
+    "Sputnik": { 
+        category: "state-sponsored", 
+        reason: "Sputnik spreads Russian state propaganda and publishes misleading information about Western countries.", 
+        search: "Is it true that Sputnik spreads Russian state propaganda?" 
+    },
+    "Before It's News": { 
+        category: "conspiracy", 
+        reason: "Before It's News is known for spreading conspiracy theories and fake news, including fabricated stories about global events.", 
+        search: "Is it true that Before It's News spreads conspiracy theories and fake news?" 
+    },
+    "Your News Wire": { 
+        category: "conspiracy", 
+        reason: "Your News Wire publishes false information and conspiracy theories, including fabricated reports on various topics.", 
+        search: "Is it true that Your News Wire publishes false information and conspiracy theories?" 
+    },
+    "WorldTruth.TV": { 
+        category: "conspiracy", 
+        reason: "WorldTruth.TV spreads conspiracy theories and pseudoscience, including false health information and other dubious claims.", 
+        search: "Is it true that WorldTruth.TV spreads conspiracy theories and pseudoscience?" 
+    },
+    "NewsPunch": { 
+        category: "conspiracy", 
+        reason: "NewsPunch publishes false information and conspiracy theories, including unsubstantiated claims about political figures.", 
+        search: "Is it true that NewsPunch publishes false information and conspiracy theories?" 
+    },
+    "Civic Tribune": { 
+        category: "fake-news", 
+        reason: "Civic Tribune is known for hoaxes and misinformation, including fabricated stories about political events.", 
+        search: "Is it true that Civic Tribune is known for hoaxes and misinformation?" 
+    },
+    "The Daily Stormer": { 
+        category: "extremist", 
+        reason: "The Daily Stormer promotes hate speech and extremist views, including anti-Semitic and other hateful content.", 
+        search: "Is it true that The Daily Stormer promotes hate speech and extremist views?" 
+    },
+    "Times of Israel": { 
+        category: "state-sponsored", 
+        reason: "Times of Israel has faced criticism for biased reporting and spreading propaganda, especially regarding the Israel-Palestine conflict.", 
+        search: "Is it true that Times of Israel has biased reporting on the Israel-Palestine conflict?" 
+    },
+    "Zero Hedge": { 
+        category: "conspiracy", 
+        reason: "Zero Hedge promotes conspiracy theories and financial misinformation, including false claims about market events.", 
+        search: "Is it true that Zero Hedge promotes conspiracy theories and financial misinformation?" 
+    },
+    "Pravda": { 
+        category: "state-sponsored", 
+        reason: "Pravda is a state-run media outlet known for spreading Russian government propaganda with a history of biased reporting on international events.", 
+        search: "Is it true that Pravda spreads Russian government propaganda?" 
+    },
+    "Press TV": { 
+        category: "state-sponsored", 
+        reason: "Press TV promotes Iranian government propaganda and often spreads biased information about Western countries.", 
+        search: "Is it true that Press TV promotes Iranian government propaganda?" 
+    },
+    "Fox News": { 
+        category: "conservative", 
+        reason: "Fox News is often criticized for extreme political bias and misinformation, such as its reporting on the 2020 US election.", 
+        search: "Is it true that Fox News has extreme political bias and misinformation?" 
+    },
+    "The Blaze": { 
+        category: "conservative", 
+        reason: "The Blaze promotes right-wing viewpoints and sometimes misleading information, including false claims about political figures.", 
+        search: "Is it true that The Blaze promotes misleading information?" 
+    },
+    "OANN": { 
+        category: "conservative", 
+        reason: "OANN spreads far-right viewpoints and conspiracy theories, including false claims about election fraud.", 
+        search: "Is it true that OANN spreads far-right viewpoints and conspiracy theories?" 
+    },
+    "Newsmax": { 
+        category: "conservative", 
+        reason: "Newsmax promotes extreme right-wing perspectives and misinformation, including false claims about the COVID-19 pandemic.", 
+        search: "Is it true that Newsmax promotes extreme right-wing perspectives and misinformation?" 
+    },
+    "Al Jazeera": { 
+        category: "state-sponsored", 
+        reason: "Al Jazeera, a Qatar state-funded media outlet, has a history of promoting government viewpoints and biased reporting on Middle Eastern conflicts.", 
+        search: "Is it true that Al Jazeera promotes government viewpoints and biased reporting?" 
+    },
+    "The Sun": { 
+        category: "tabloid", 
+        reason: "The Sun is known for sensationalism and often publishes exaggerated or false stories, particularly about celebrities and high-profile topics.", 
+        search: "Is it true that The Sun publishes exaggerated or false stories?" 
+    }
+};
+
+const normalizedQuery = q.toLowerCase().replace(/\s+/g, '');
+const matchedSource = Object.keys(fakeNewsSources).find(source => normalizedQuery.includes(source.toLowerCase().replace(/\s+/g, '')));
+
+if (q.includes('-debug-news')) {
+%>
+
+<div class="container">          
+    <h2 class="debug-title">
+        <span class="debug-icon">🔍</span> Debug Info
+    </h2>
+    <p class="debug-intro">
+        Here are all the sources and their details:
+    </p>
+    <ul class="debug-list">
+        <% Object.keys(fakeNewsSources).forEach(source => { %>
+            <li class="debug-item">
+                <strong><%= source %></strong> - <%= fakeNewsSources[source].reason %> <br>
+                <a class="debug-link" href="https://www.google.com/search?q=<%= fakeNewsSources[source].search %>">Find more info</a>
+            </li>
+        <% }); %>
+    </ul>
+</div>
+
+<% } else if (matchedSource) { %>
+
+<div class="container">          
+    <h2 class="warning-title">
+        <span class="warning-icon">🚫</span> 
+        <br> Be Cautious with This Source 
+    </h2>
+    <p class="warning-intro">
+        Hai there! It looks like you might be looking at info from <strong><%= matchedSource %></strong>, which is known for spreading fake news or propaganda.
+    </p>
+    <p class="warning-tips">
+        Here are some tips to check if what you're reading is legit:
+    </p>
+    <ul class="tips-list">
+        <li class="tips-item"><strong>Check the source's rep:</strong> Reliable sites usually have a good track record for being accurate and fair.</li>
+        <li class="tips-item"><strong>See if other reputable sites are reporting the same news:</strong> If it's just one place, be cautious.</li>
+        <li class="tips-item"><strong>Use fact-checking sites:</strong> Try <a href="https://www.snopes.com/" class="fact-check-link">Snopes</a> or <a href="https://www.factcheck.org/" class="fact-check-link">FactCheck.org</a>.</li>
+        <li class="tips-item"><strong>Look at the publication date:</strong> Make sure it's current and not out of context.</li>
+        <li class="tips-item"><strong>Check for links and citations:</strong> Good articles usually back up their claims with evidence.</li>
+    </ul>
+     
+    <p>wrong filter? <a href="https://codeberg.org/ashley/poke/issues/new?template=issue_template%2fsearch-filter.yml">Report :3</p>
+</div>
+
+<% } %>
+
+<style>
+    .container {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        border-radius: 8px;
+        background: #1a1a1a;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .debug-title, .warning-title {
+        font-family: 'PokeTube Flex';
+        font-size: large;
+        text-align: left;
+        font-stretch: ultra-expanded;
+        font-weight: 1000;
+    }
+
+    .debug-icon, .warning-icon {
+        font-size: 7em;
+    }
+
+    .debug-intro, .warning-intro, .warning-tips, .warning-info {
+        font-size: 16px;
+        color: #fff;
+        margin: 10px 0;
+    }
+
+    .debug-list, .tips-list, .warning-links {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+
+    .debug-item, .tips-item, .warning-link {
+        margin-bottom: 10px;
+    }
+
+    .debug-link, .fact-check-link, .warning-link {
+        color: #007bff;
+        text-decoration: none;
+    }
+
+    .debug-link:hover, .fact-check-link:hover, .warning-link:hover {
+        text-decoration: underline;
+    }
+
+    .tips-list {
+        background-color: #111;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        padding: 15px;
+    }
+</style>
+
+
+
+
+  <% if (q.includes("whats your eta")) { %> 
+<a href="/watch?v=mREOvIgImmo" style="text-align: center;margin-left: auto;margin-right: auto;font-family: 'PokeTube Flex';font-stretch: ultra-expanded;font-weight: 1000;color: #fff;"><h1 style="font-family: 'PokeTube Flex';font-stretch: ultra-expanded;
+font-weight: 1000;">2 MINUTES!</h1></a>
+  <% } %>
+
+  <% if (q.includes("fish")) { %> 
+<a   style="text-align: center;margin-left: auto;margin-right: auto;font-family: 'PokeTube Flex';font-stretch: ultra-expanded;font-weight: 1000;color: #fff;"><h1 style="font-family: 'PokeTube Flex';font-stretch: ultra-expanded;
+font-weight: 1000;">🐟</h1></a>
+  <% } %>
+     
+ <% if (q.includes("how to be racist?")) { %> 
+<a   style="text-align: center;margin-left: auto;margin-right: auto;font-family: 'PokeTube Flex';font-stretch: ultra-expanded;font-weight: 1000;color: #fff;"><h1 style="font-family: 'PokeTube Flex';font-stretch: ultra-expanded;
+font-weight: 1000;">dont.</h1></a>
+  <% } %>
+                 <%  if (!tab) { %> 
+  <style>
+.thumbnail {
+  position: relative;
+  display: inline-block;
+}
+
+.thumbnail .hover-text {
+    display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  background-color: rgba(0, 0, 0, 0.5);  
+  padding: 5px 10px;
+  border-radius: 5px;
+  z-index: 2;
+}
+
+.thumbnail:hover .hover-text {
+  display: block;
+}
+
+.thumbnail .video-length {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  z-index: 1;
+}
+
+.thumbnail:hover .video-length {
+  display: none;
+}
+</style>
+   <%  if (invresults?.length < 1) { %>
+              <style>
+              #filters {
+                display:none
+              }
+              .tag {
+                display:none;
+              }
+              </style>
+              <div style="margin-left:auto;margin-right:auto;padding: 1em;width: fit-content;background: #1a1a1a;border-radius: 1em;border: 1px solid #ccc;">
+               <span style="font-size: 7em; color: pink;margin-bottom: -29px;text-align:center;align-self: center;display: inherit;">😞</span>
+              <p style="font-family: poketube flex;font-weight: 1000;font-stretch: extra-expanded;font-size: 2em;text-align:center;">Nu results found :c </p>
+               <p>
+	u can try other alternatives such as
+	<b>
+		<a href="https://invidio.us/results?q=<%=q%>">Invidious</a>
+	</b> 
+	or
+	<b>
+		<a href="https://youtube.com/results?search_query=<%=q%>">YouTube</a>
+	</b> to find the video ur wanting!!! ^_^
+</p>
+</div>
+                                   <% } %>   
+                                   
+<% invresults?.forEach (x => { %>
+  <div class="video-list">
+    <div class="video">
+      <a href="/watch?v=<%= x.videoId %>"
+        class="thumbnail"
+        style="background-image: url('<%- media_proxy_url %>/proxy?url=https://i.ytimg.com/vi/<%= x.videoId %>/hqdefault.jpg?sqp=-oaymwEXCNAFEJQDSFryq4qpAwkIARUAAIhCGAE=&amp;rs=AOn4CLBmAOZV7CM3NdDKlEFxGX7PpI5UWQ');border-radius: 10px;">
+        <span class="hover-text">Watch :3</span>
+        <span class="video-length"><%= turntomins(x.lengthSeconds) %></span>
+      </a>
+      <div class="info" style="color:#fff;text-align: left;font-weight: 1000;">
+        <a style="font-family: 'PokeTube Flex';font-size: large;text-align: left;font-stretch: extra-expanded;
+font-weight: 1000;" href="/watch?v=<%= x.videoId %>" class="title max-lines-2"><%= x.title %></a>
+        <div style="display: flex; flex-direction: column; row-gap: 8px;font-weight:bold">
+          <a href="/watch?v=<%= x.videoId %>"><span><%= x.viewCountText %></span> <span>•</span> <span><%= x.publishedText %></span></a>
+          <a href="/channel?id=<%= x.authorId %>"><%= x.author %><% if (x?.authorVerified) { %> 
+            <i class="icon ion ion-md-checkmark-circle" title="verified channel"></i><% } %></a>
+          <div style="display: inline-flex;flex-direction: row;min-width: 6em;gap: 4px;">
+            <a href="/download?v=<%= x.videoId %>" style="background: #333;width: 7.6em;border-radius: 18px;">
+              <div style="display: flex;">
+                <i class="fa-light fa-download" style="display: flex;font-size: 16px;padding: 5px;border-radius: 18px;margin-left: 2px;"></i><span style="margin-top: 6px;">Download</span>
+              </div>
+            </a>
+            <a href="https://youtube.com/watch?v=<%= x.videoId %>" style="background: #333;width: 7.6em;border-radius: 18px;height: 2em;width: 12.5em;">
+              <div style="display: flex;">
+                <i class="fa-brands fa-youtube" style="display: flex;font-size: 16px;padding: 5px;border-radius: 18px;margin-left: 2px;"></i><span style="margin-top: 6px;">Open on YouTube :/</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% }) %>
+
+ 
+
+  
+        <audio id="audio" style="display:none;" loop autoplay></audio>
+  
+                  
+             
+                  
+                   <%  if (invresults?.length >= 1) { %>
+
+                                     <center>  
+
+ <hr style="clear: both;display: block;border: none;border-bottom: 0.5px solid #2f2f2f;margin: 0 16em;/*! width: 4.5em; */height: 0;margin-top: 1em;">
+
+<div style="border-top: 1px solid var(--border-color);width: 100%;display: flex;gap: 43em;padding: 0;margin: 0;">
+          
+            <%  if (Number(continuation) >= "2") { %>
+              
+<p style="text-align: left;margin-left: 16em;color: var(--text-secondary);text-decoration: none;">
+    <a  href="/search?query=<%=q%>">First Page</a>              </p>
+<p style="text-align: left; color: var(--text-secondary); text-decoration: none;">
+  <a href="/search?query=<%= q %>&continuation=<%- Number(continuation) + 1 %><% if (date) { %>&date=<%= date %><% } %><% if (duration) { %>&duration=<%= duration %><% } %><% if (sort) { %>&sort=<%= sort %><% } %>  ">Next Page</a>
+</p>
+
+                                                <% } %>  
+                            <%  if (Number(continuation) <= "0" || !continuation) { %>
+               <p style="text-align: left;margin-left: 16em;;color: var(--text-secondary);text-decoration: none;">
+    <a  href="/search?query=<%=q%>&continuation=2<% if (date) { %>&date=<%= date %><% } %><% if (duration) { %>&duration=<%= duration %><% } %><% if (sort) { %>&sort=<%= sort %><% } %>
+              ">Next Page</a>      
+                               </p>
+
+                                                <% } %>  
+             
+                    </div>
+
+                  </center>
+                                         <% } %>   
+
+           
+                                                      </center>
+
+                                                <% } %>  
+
+                                                              <%  if (tab === "web") { %>
+                                                                         <div class="video-list" >
+
+     <% results.forEach(x => { %>
+                                                                       <div class="video" style="height: 6em;">
+
+        <a style="min-width: 81em;" href="<%= x.link %>"><%= x.title %></a><br>
+        <p style="color:gray;display: flex;flex-direction: column;width: 48em;margin-top: -8em;"><%= x.link %><br>
+         <span style="color:white;width: 48em;display: flex;"><%= x.snippet %></span>
+          </p>
+              </div>
+
+             <% }) %>
+                                                <% } %>  
+
+        </a>
+        </div>
+                                    
+                 <script src="/static/custom-css.js?v=45485"> </script>
+                              <script>    
+                    // @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&dn=gpl-3.0.txt GPL-3.0-or-later            
+                 if ('serviceWorker' in navigator) {
+                     navigator.serviceWorker.getRegistrations().then(function(registrations) {
+                         for (let registration of registrations) {
+                             registration.unregister();
+                         }
+                     });
+                     if ('caches' in window) {
+                         caches.keys().then(function(cacheNames) {
+                             cacheNames.forEach(function(cacheName) {
+                                 caches.delete(cacheName);
+                             });
+                         });
+                     }
+
+                 }
+
+                 document.addEventListener("DOMContentLoaded", function() {
+                     if (localStorage.getItem('liar.')) {
+                         var thumbnails = document.querySelectorAll('.thumbnail');
+
+                         function changeFavicon(newFaviconUrl) {
+                             var oldFavicon = document.querySelector('link[rel="icon"]');
+                             if (oldFavicon) {
+                                 oldFavicon.remove();
+                             }
+                             var link = document.createElement('link');
+                             link.rel = 'icon';
+                             link.href = newFaviconUrl;
+                             document.head.appendChild(link);
+                         }
+                         changeFavicon("<%- media_proxy_url %>/proxy?url=https://static.wikia.nocookie.net/omori/images/d/d8/Something_Float_%282018_Demo%29.gif")
+                         var textList = [
+                             "sunny... i love you",
+                             "SUNNY... I'm... sorry...",
+                             "liar.",
+                             "143",
+                         ];
+
+                         var textElements = document.querySelectorAll('.title');
+
+                         textElements.forEach(function(element, index) {
+                             element.textContent = textList[index % textList.length];  
+                         });
+
+
+                         var backgroundClasses = ['something-background-a', 'something-background-b', 'something-background-c'];
+
+                          thumbnails.forEach(function(thumbnail) {
+                             var randomIndex = Math.floor(Math.random() * backgroundClasses.length);
+                             thumbnail.classList.add(backgroundClasses[randomIndex]);
+                         });
+
+                         document.title = "sunny..im..sorry"
+                         var audio = new Audio('https://p.poketube.fun/https://cdn.glitch.global/d68d17bb-f2c0-4bc3-993f-50902734f652/Lost_at_Sea.ogg?v=1706879048533');
+                         audio.loop = true;
+                         audio.autoplay = true;
+                     }
+                 });
+
+                 // @license-end
+</script>
+
+                                    </body>
+                              
+ 
