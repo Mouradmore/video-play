@@ -1,0 +1,904 @@
+/* cyrillic */
+@font-face {
+  font-family: "Ubuntu";
+  font-style: italic;
+  font-weight: 300;
+  src: url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-cyrillic-300-italic.woff2?v=166834342868812)
+      format("woff2"),
+    url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-cyrillic-300-italic.woff?v=16683434286881)
+      format("woff");
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+  font-display: swap;
+}
+
+/* cyrillic-ext */
+@font-face {
+  font-family: "Ubuntu";
+  font-style: italic;
+  font-display: swap;
+  font-weight: 300;
+  src: url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-cyrillic-ext-300-italic.woff2?v=166834342868812)
+      format("woff2"),
+    url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-cyrillic-ext-300-italic.woff?v=16683434286881)
+      format("woff");
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F,
+    U+FE2E-FE2F;
+}
+
+/* greek */
+@font-face {
+  font-family: "Ubuntu";
+  font-style: italic;
+  font-weight: 300;
+  src: url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-greek-300-italic.woff2?v=166834342868812)
+      format("woff2"),
+    url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-greek-300-italic.woff?v=16683434286881)
+      format("woff");
+  unicode-range: U+0370-03FF;
+  font-display: swap;
+}
+
+/* greek-ext */
+@font-face {
+  font-family: "Ubuntu";
+  font-style: italic;
+  font-display: swap;
+
+  font-weight: 300;
+  src: url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-greek-ext-300-italic.woff?v=166834342868812)
+      format("woff2"),
+    url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-greek-ext-300-italic.woff?v=16683434286881)
+      format("woff");
+  unicode-range: U+1F00-1FFF;
+}
+
+/* latin */
+@font-face {
+  font-family: "Ubuntu";
+  font-display: swap;
+
+  font-style: italic;
+  font-weight: 300;
+  src: url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-latin-300-italic.woff?v=166834342868812)
+      format("woff2"),
+    url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-latin-300-italic.woff?v=16683434286881)
+      format("woff");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
+}
+
+/* latin-ext */
+@font-face {
+  font-family: "Ubuntu";
+  font-style: italic;
+  font-weight: 300;
+  src: url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-latin-ext-300-italic.woff?v=166834342868812)
+      format("woff2"),
+    url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-latin-ext-300-italic.woff?v=16683434286881)
+      format("woff");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
+    U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  font-display: swap;
+}
+
+/* cyrillic */
+@font-face {
+  font-family: "Ubuntu";
+  font-style: italic;
+  font-weight: 400;
+  src: url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-cyrillic-400-italic.woff?v=166834342868812)
+      format("woff2"),
+    url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-cyrillic-400-italic.woff?v=16683434286881)
+      format("woff");
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+  font-display: swap;
+}
+
+/* cyrillic-ext */
+@font-face {
+  font-family: "Ubuntu";
+  font-style: italic;
+  font-display: swap;
+
+  font-weight: 400;
+  src: url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-cyrillic-ext-400-italic.woff?v=166834342868812)
+      format("woff2"),
+    url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-cyrillic-ext-400-italic.woff?v=16683434286881)
+      format("woff");
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F,
+    U+FE2E-FE2F;
+}
+
+/* greek */
+@font-face {
+  font-family: "Ubuntu";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+
+  src: url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-greek-400-italic.woff?v=166834342868812)
+      format("woff2"),
+    url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-greek-400-italic.woff?v=16683434286881)
+      format("woff");
+  unicode-range: U+0370-03FF;
+}
+
+/* greek-ext */
+@font-face {
+  font-family: "Ubuntu";
+  font-style: italic;
+  font-display: swap;
+
+  font-weight: 400;
+  src: url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-greek-ext-400-italic.woff?v=166834342868812)
+      format("woff2"),
+    url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-greek-ext-400-italic.woff?v=16683434286881)
+      format("woff");
+  unicode-range: U+1F00-1FFF;
+}
+
+/* latin */
+@font-face {
+  font-family: "Ubuntu";
+  font-style: italic;
+  font-weight: 400;
+  src: url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-latin-400-italic.woff?v=166834342868812)
+      format("woff2"),
+    url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-latin-400-italic.woff?v=16683434286881)
+      format("woff");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
+}
+
+/* latin-ext */
+@font-face {
+  font-family: "Ubuntu";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+
+  src: url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-latin-ext-400-italic.woff?v=166834342868812)
+      format("woff2"),
+    url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-latin-ext-400-italic.woff?v=16683434286881)
+      format("woff");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
+    U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* cyrillic */
+@font-face {
+  font-family: "Ubuntu";
+  font-style: italic;
+  font-weight: 500;
+  src: url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-cyrillic-500-italic.woff?v=166834342868812)
+      format("woff2"),
+    url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-cyrillic-500-italic.woff?v=16683434286881)
+      format("woff");
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+  font-display: swap;
+}
+
+/* cyrillic-ext */
+@font-face {
+  font-family: "Ubuntu";
+  font-style: italic;
+  font-weight: 500;
+  src: url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-cyrillic-ext-500-italic.woff?v=166834342868812)
+      format("woff2"),
+    url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-cyrillic-ext-500-italic.woff?v=16683434286881)
+      format("woff");
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F,
+    U+FE2E-FE2F;
+  font-display: swap;
+}
+
+/* greek */
+@font-face {
+  font-family: "Ubuntu";
+  font-style: italic;
+  font-weight: 500;
+  src: url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-greek-500-italic.woff?v=166834342868812)
+      format("woff2"),
+    url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-greek-500-italic.woff?v=16683434286881)
+      format("woff");
+  unicode-range: U+0370-03FF;
+  font-display: swap;
+}
+
+/* greek-ext */
+@font-face {
+  font-family: "Ubuntu";
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+
+  src: url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-greek-ext-500-italic.woff?v=166834342868812)
+      format("woff2"),
+    url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-greek-ext-500-italic.woff?v=16683434286881)
+      format("woff");
+  unicode-range: U+1F00-1FFF;
+}
+
+/* latin */
+@font-face {
+  font-family: "Ubuntu";
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+
+  src: url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-latin-500-italic.woff?v=166834342868812)
+      format("woff2"),
+    url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-latin-500-italic.woff?v=16683434286881)
+      format("woff");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
+}
+
+/* latin-ext */
+@font-face {
+  font-family: "Ubuntu";
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+
+  src: url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-latin-ext-500-italic.woff?v=166834342868812)
+      format("woff2"),
+    url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-latin-ext-500-italic.woff?v=16683434286881)
+      format("woff");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
+    U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* cyrillic */
+@font-face {
+  font-family: "Ubuntu";
+  font-style: italic;
+  font-display: swap;
+
+  font-weight: 700;
+  src: url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-cyrillic-700-italic.woff?v=166834342868812)
+      format("woff2"),
+    url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-cyrillic-700-italic.woff?v=16683434286881)
+      format("woff");
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+/* cyrillic-ext */
+@font-face {
+  font-family: "Ubuntu";
+  font-style: italic;
+  font-weight: 700;
+  src: url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-cyrillic-ext-700-italic.woff?v=166834342868812)
+      format("woff2"),
+    url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-cyrillic-ext-700-italic.woff?v=16683434286881)
+      format("woff");
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F,
+    U+FE2E-FE2F;
+  font-display: swap;
+}
+
+/* greek */
+@font-face {
+  font-family: "Ubuntu";
+  font-style: italic;
+  font-weight: 700;
+  src: url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-greek-700-italic.woff?v=166834342868812)
+      format("woff2"),
+    url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-greek-700-italic.woff?v=16683434286881)
+      format("woff");
+  unicode-range: U+0370-03FF;
+  font-display: swap;
+}
+
+/* greek-ext */
+@font-face {
+  font-family: "Ubuntu";
+  font-style: italic;
+  font-weight: 700;
+  src: url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-greek-ext-700-italic.woff?v=166834342868812)
+      format("woff2"),
+    url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-greek-ext-700-italic.woff?v=16683434286881)
+      format("woff");
+  unicode-range: U+1F00-1FFF;
+  font-display: swap;
+}
+
+/* latin */
+@font-face {
+  font-family: "Ubuntu";
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+
+  src: url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-latin-700-italic.woff?v=166834342868812)
+      format("woff2"),
+    url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-latin-700-italic.woff?v=16683434286881)
+      format("woff");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
+}
+
+/* latin-ext */
+@font-face {
+  font-family: "Ubuntu";
+  font-display: swap;
+
+  font-style: italic;
+  font-weight: 700;
+  src: url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-latin-ext-700-italic.woff?v=166834342868812)
+      format("woff2"),
+    url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-latin-ext-700-italic.woff?v=16683434286881)
+      format("woff");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
+    U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* cyrillic */
+@font-face {
+  font-family: "Ubuntu";
+  font-display: swap;
+
+  font-style: normal;
+  font-weight: 300;
+  src: url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-cyrillic-300-normal.woff?v=166834342868812)
+      format("woff2"),
+    url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-cyrillic-300-normal.woff?v=16683434286881)
+      format("woff");
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+/* cyrillic-ext */
+@font-face {
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-weight: 300;
+  src: url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-cyrillic-ext-300-normal.woff?v=166834342868812)
+      format("woff2"),
+    url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-cyrillic-ext-300-normal.woff?v=16683434286881)
+      format("woff");
+  font-display: swap;
+
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F,
+    U+FE2E-FE2F;
+}
+
+/* greek */
+@font-face {
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-display: swap;
+
+  font-weight: 300;
+  src: url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-greek-300-normal.woff?v=166834342868812)
+      format("woff2"),
+    url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-greek-300-normal.woff?v=16683434286881)
+      format("woff");
+  unicode-range: U+0370-03FF;
+}
+
+/* greek-ext */
+@font-face {
+  font-family: "Ubuntu";
+  font-display: swap;
+
+  font-style: normal;
+  font-weight: 300;
+  src: url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-greek-ext-300-normal.woff?v=166834342868812)
+      format("woff2"),
+    url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-greek-ext-300-normal.woff?v=16683434286881)
+      format("woff");
+  unicode-range: U+1F00-1FFF;
+}
+
+/* latin */
+@font-face {
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+
+  src: url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-latin-300-normal.woff?v=166834342868812)
+      format("woff2"),
+    url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-latin-300-normal.woff?v=16683434286881)
+      format("woff");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
+}
+
+/* latin-ext */
+@font-face {
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-display: swap;
+
+  font-weight: 300;
+  src: url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-latin-ext-300-normal.woff?v=166834342868812)
+      format("woff2"),
+    url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-latin-ext-300-normal.woff?v=16683434286881)
+      format("woff");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
+    U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* cyrillic */
+@font-face {
+  font-display: swap;
+
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-cyrillic-400-normal.woff?v=166834342868812)
+      format("woff2"),
+    url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-cyrillic-400-normal.woff?v=16683434286881)
+      format("woff");
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+/* cyrillic-ext */
+@font-face {
+  font-display: swap;
+
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-cyrillic-ext-400-normal.woff?v=166834342868812)
+      format("woff2"),
+    url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-cyrillic-ext-400-normal.woff?v=16683434286881)
+      format("woff");
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F,
+    U+FE2E-FE2F;
+}
+
+/* greek */
+@font-face {
+  font-display: swap;
+
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-greek-400-normal.woff?v=166834342868812)
+      format("woff2"),
+    url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-greek-400-normal.woff?v=16683434286881)
+      format("woff");
+  unicode-range: U+0370-03FF;
+}
+
+/* greek-ext */
+@font-face {
+  font-display: swap;
+
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-greek-ext-400-normal.woff?v=166834342868812)
+      format("woff2"),
+    url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-greek-ext-400-normal.woff?v=16683434286881)
+      format("woff");
+  unicode-range: U+1F00-1FFF;
+}
+
+/* latin */
+@font-face {
+  font-display: swap;
+
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-latin-400-normal.woff?v=166834342868812)
+      format("woff2"),
+    url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-latin-400-normal.woff?v=16683434286881)
+      format("woff");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
+}
+
+/* latin-ext */
+@font-face {
+  font-display: swap;
+
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-latin-ext-400-normal.woff?v=166834342868812)
+      format("woff2"),
+    url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-latin-ext-400-normal.woff?v=16683434286881)
+      format("woff");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
+    U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* cyrillic */
+@font-face {
+  font-family: "Ubuntu";
+  font-display: swap;
+
+  font-style: normal;
+  font-weight: 500;
+  src: url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-cyrillic-500-normal.woff?v=166834342868812)
+      format("woff2"),
+    url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-cyrillic-500-normal.woff?v=16683434286881)
+      format("woff");
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+/* cyrillic-ext */
+@font-face {
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+
+  src: url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-cyrillic-ext-500-normal.woff?v=166834342868812)
+      format("woff2"),
+    url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-cyrillic-ext-500-normal.woff?v=16683434286881)
+      format("woff");
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F,
+    U+FE2E-FE2F;
+}
+
+/* greek */
+@font-face {
+  font-family: "Ubuntu";
+  font-display: swap;
+
+  font-style: normal;
+  font-weight: 500;
+  src: url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-greek-500-normal.woff?v=166834342868812)
+      format("woff2"),
+    url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-greek-500-normal.woff?v=16683434286881)
+      format("woff");
+  unicode-range: U+0370-03FF;
+}
+
+/* greek-ext */
+@font-face {
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-display: swap;
+
+  font-weight: 500;
+  src: url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-greek-ext-500-normal.woff?v=166834342868812)
+      format("woff2"),
+    url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-greek-ext-500-normal.woff?v=16683434286881)
+      format("woff");
+  unicode-range: U+1F00-1FFF;
+}
+
+/* latin */
+@font-face {
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+
+  src: url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-latin-500-normal.woff?v=166834342868812)
+      format("woff2"),
+    url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-latin-500-normal.woff?v=16683434286881)
+      format("woff");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
+}
+
+/* latin-ext */
+@font-face {
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+
+  src: url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-latin-ext-500-normal.woff?v=166834342868812)
+      format("woff2"),
+    url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-latin-ext-500-normal.woff?v=16683434286881)
+      format("woff");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
+    U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* cyrillic */
+@font-face {
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-display: swap;
+
+  font-weight: 700;
+  src: url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-cyrillic-700-normal.woff?v=166834342868812)
+      format("woff2"),
+    url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-cyrillic-700-normal.woff?v=16683434286881)
+      format("woff");
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+/* cyrillic-ext */
+@font-face {
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-cyrillic-ext-700-normal.woff?v=166834342868812)
+      format("woff2"),
+    url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-cyrillic-ext-700-normal.woff?v=16683434286881)
+      format("woff");
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F,
+    U+FE2E-FE2F;
+}
+
+/* greek */
+@font-face {
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-greek-700-normal.woff?v=166834342868812)
+      format("woff2"),
+    url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-greek-700-normal.woff?v=16683434286881)
+      format("woff");
+  unicode-range: U+0370-03FF;
+}
+
+/* greek-ext */
+@font-face {
+  font-display: swap;
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-weight: 700;
+  src: url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-greek-ext-700-normal.woff?v=166834342868812)
+      format("woff2"),
+    url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-greek-ext-700-normal.woff?v=16683434286881)
+      format("woff");
+  unicode-range: U+1F00-1FFF;
+}
+
+/* latin */
+@font-face {
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-latin-700-normal.woff?v=166834342868812)
+      format("woff2"),
+    url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-latin-700-normal.woff?v=16683434286881)
+      format("woff");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
+}
+
+/* latin-ext */
+@font-face {
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-weight: 700;
+  src: url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-latin-ext-700-normal.woff?v=166834342868812)
+      format("woff2"),
+    url(https://p.poketube.fun/https://fonts.bunny.net/ubuntu/files/ubuntu-latin-ext-700-normal.woff?v=16683434286881)
+      format("woff");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
+    U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  font-display: swap;
+}
+
+:root {
+  --default-cursor: url('/static/cursor.ico') 2 0, default;
+  --pointer-cursor: url('/static/cursor-pointer.ico') 14 0, pointer;
+}
+
+html {
+  min-height: 100%;
+} 
+
+body {
+  background-color: #250717;
+  color: #fff;
+  font-family: ubuntu, sans-serif;
+  margin: auto;
+  max-width: 1920px;
+  font-size: 16px;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+body {cursor: var(--default-cursor)}
+
+a,
+btn,
+button,
+input,
+select,
+button,
+summary,
+span > a,
+li > a {cursor: var(--pointer-cursor)}
+.btn {cursor: var(--pointer-cursor) !important}
+
+@font-face {
+  src: url("https://p.poketube.fun/https://cdn.glitch.global/43b6691a-c8db-41d4-921c-8cf6aa0d9108/robotoflex.ttf?v=16683434286881");
+  font-family: "PokeTube Flex";
+  font-style: normal;
+  font-stretch: 1% 800%;
+  font-display: swap;
+}
+@media only screen and (max-width: 1328px) {
+  body {
+    padding: 0 48px !important;
+  }
+}
+@media only screen and (max-width: 1980px) {
+  body {
+    max-width: calc(100% - 48px);
+  }
+}
+@media only screen and (max-width: 700px) {
+  body {
+    padding: 0 !important;
+  }
+  blockquote {
+    margin: 0 !important;
+    border-radius: 0 !important;
+  }
+  .header-content {
+    padding: 0 24px;
+  }
+}
+@media only screen and (max-width: 560px) {
+  .header-content-start img {
+    width: 24px;
+    object-fit: cover;
+    height: 24px;
+    object-position: left;
+  }
+  #fname {
+    width: calc(100% - 100px);
+  }
+}
+ .landing {
+  margin: auto;
+  position: relative;
+  margin-top: 240px;
+  max-width: 1200px;
+}
+.landing h1 {
+  font-size: xxx-large;
+  font-family: "PokeTube flex";
+  font-stretch: ultra-expanded;
+  font-weight: 1000;
+}
+.landing img {
+  margin-top: 48px;
+  height: 503px;
+  object-fit: cover;
+  object-position: top;
+  mask-image: linear-gradient(#5315ff,#0000);
+  border-top-left-radius: 1em;
+  border-top-right-radius: 1em;
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(#5315ff,#0000);
+}
+.landing-actions a {
+  background: #fff;
+  color: #000;
+  text-decoration: none;
+  border-radius: 50px;
+  padding: 12px 24px;
+}
+.features {
+  display: flex;
+}
+.features p {
+  border-radius: 48px;
+  padding: 16px 32px;
+  border: 2px #612153 solid;
+  background: #61215359;
+  margin: 12px 6px;
+}
+.features p i {
+  font-size: 18px;
+  background: #612153;
+  padding: 10px;
+  border-radius: 24px;
+  margin: -10px 10px -10px -24px;
+}
+
+img[src="/static/poke-chan-outfit-a.png"] {
+  height: 400px;
+  width: 369px;
+  mask-image: none;
+  z-index: 5;
+  transform: scaleX(1);
+  float: right;
+  display: flex;
+  position: absolute;
+  right: 10px;
+  margin: -237px -60px 0px 0px;
+}
+
+.new-feature-set {
+  display: grid;
+  margin: 54px 0px 24px 0px;
+  max-width: 1200px;
+  grid-template-columns: repeat(auto-fit,minmax(350px,1fr));
+  text-align: left;
+}
+.feature-set {
+  padding: 32px;
+}
+.feature-set p {
+  text-align: left;
+}
+
+.feature-set svg {
+  width: 32px;
+  height: 32px;
+  border-radius: 5rem;
+  padding: 6px;
+}
+.feature-set-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: left;
+}
+.feature-set-title h2 {
+  font-family: "PokeTube flex";
+  font-stretch: ultra-expanded;
+  font-weight: 1000;
+  margin: 0px;
+}
+
+@media only screen and (max-width: 1420px) {
+  .landing {
+    width: calc(100% - 24px);
+  }
+}
+@media only screen and (max-width: 740px) {
+  .landing img {
+    height: 500px;
+  }
+  .features {
+    flex-direction: column;
+    text-align: left;
+    width: max-content;
+    margin: auto;
+  }
+}
+
+video {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  opacity: 0.27;
+  pointer-events: none;
+}
+
+
+@media screen and (max-width: 1919px) {
+  #HD-BG {
+      display: none;
+  }
+}
+  
+@media screen and (min-width: 1920px) {
+  #SD-BG {
+      display: none;
+  }
+}
+
+
+.adaptive-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(350px,1fr));
+  max-width: 1200px;
+  margin: auto;
+  grid-gap: 12px;
+}
