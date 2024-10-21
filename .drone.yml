@@ -1,0 +1,19 @@
+kind: pipeline
+type: exec
+name: Build and Push Docker Image
+
+platform:
+  os: linux
+  arch: arm64
+
+steps:
+- name: Build
+  environment:
+    CODEBERG_USERNAME:
+      from_secret: CODEBERG_USERNAME
+    CODEBERG_PASSWORD:
+      from_secret: CODEBERG_PASSWORD
+  commands:
+    - echo $CODEBERG_PASSWORD | docker login codeberg.org --username $CODEBERG_USERNAME --password-stdin
+    - docker build -t codeberg.org/korbs/poke:arm64 .
+    - docker push codeberg.org/korbs/poke:arm64
